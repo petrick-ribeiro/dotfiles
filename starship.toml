@@ -1,0 +1,47 @@
+# Inserts a blank line between shell prompts
+#add_newline = true
+
+# Timeout for starship to scan
+scan_timeout = 30
+
+# Timeout for commands executed
+command_timeout = 500
+
+[username]
+style_user = "white bold"
+style_root = "blue bold"
+format = "[$user]($style)[@](bold purple)"
+# format = ""
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[$hostname](white bold) "
+# format = ""
+# trim_at = ".companyname.com"
+disabled = false
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
+
+[sudo]
+style = "bold green"
+symbol = "🐧 "
+disabled = false
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# Languages
+# ~/.config/starship.toml
+
+[aws]
+format = 'on [$symbol$region]($style) '
+style = 'bold green'
+disabled = true
+# [aws.region_aliases]
+# ap-southeast-2 = 'au'
+# us-east-1 = 'va'

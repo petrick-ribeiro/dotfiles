@@ -1,0 +1,20 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.config/fish:
+      path: fish
+      force: true
+    ~/.config/starship.toml: starship.toml
+    ~/.config/neofetch: neofetch
+    ~/.config/kitty: kitty
+
+- create:
+    - ~/workspace/
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

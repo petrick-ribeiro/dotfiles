@@ -7,7 +7,14 @@ if status is-interactive
   # Kitty
   # set -gx PATH $PATH $HOME/.local/kitty.app/bin/
 
+  # Walk
+  set -gx WALK_EDITOR /usr/local/bin/nvim
+
+  #Rust
+  set -gx PATH $PATH $HOME/.cargo/bin/
+
   # GO
+  set -gx PATH $PATH /usr/local/go/bin/
   set -gx PATH $PATH $HOME/go/bin/
   set -gx GOPATH $HOME/go/
   set -gx GOROOT /usr/local/go/
@@ -36,4 +43,9 @@ if set -q KITTY_INSTALLATION_DIR
     set --global KITTY_SHELL_INTEGRATION enabled
     source "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish"
     set --prepend fish_complete_path "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_completions.d"
+end
+
+# Walk function
+function lk
+  set loc (walk --icons $argv); and cd $loc;
 end

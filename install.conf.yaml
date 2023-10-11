@@ -2,13 +2,12 @@
     link:
       create: true
       relink: true
+      force: true
 
 - clean: ['~', '~/.config']
 
 - link:
-    ~/.config/fish:
-      path: fish
-      force: true
+    ~/.config/fish: fish
     ~/.config/starship.toml: starship.toml
     ~/.config/neofetch: neofetch
     ~/.config/kitty: kitty

@@ -4,16 +4,24 @@
       relink: true
       force: true
 
-- clean: ['~', '~/.config']
+- clean: ["~", "~/.config"]
 
 - link:
+    # TERMINAL
     ~/.config/fish: fish
     ~/.config/starship.toml: starship.toml
     ~/.config/neofetch: neofetch
     ~/.config/kitty: kitty
 
+    # HYPRLAND
+    ~/.config/hypr: hypr
+    ~/.config/assets: assets
+    ~/.config/rofi: rofi
+    ~/.config/swww: swww
+    ~/.config/waybar: waybar
+
 - create:
     - ~/workspace/
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]

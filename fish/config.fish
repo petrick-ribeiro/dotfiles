@@ -1,7 +1,9 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
   set fish_greeting
-  neofetch 
+  set fish_cursor_default underscore
+  # fastfetch 
+  neofetch
   starship init fish --print-full-init | sed 's/"$(commandline)"/(commandline | string collect)/' | source 
 
   #######################################
@@ -18,8 +20,9 @@ if status is-interactive
   set -gx PATH $PATH $HOME/.cargo/bin/
 
   # JS
+  # set -gx NPM_CONFIG_PREFIX $HOME/.npm-global
   set -gx NVM_DIR $HOME/.nvm
-  set -gx PNPM_HOME "/home/petrick/.local/share/pnpm"
+  set -gx PNPM_HOME $HOME/.local/share/pnpm
 
   # GO
   set -gx PATH $PATH /usr/local/go/bin/
@@ -28,10 +31,10 @@ if status is-interactive
   set -gx GOROOT /usr/local/go/
 
   # Java
-  set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
-  set -gx M2_HOME /opt/maven
-  set -gx PATH $PATH $JAVA_HOME/bin/
-  set -gx PATH $PATH $M2_HOME/bin
+  # set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+  # set -gx M2_HOME /opt/maven
+  # set -gx PATH $PATH $JAVA_HOME/bin/
+  # set -gx PATH $PATH $M2_HOME/bin
 
   # K8s
   # set -gx PATH $PATH $HOME/.krew/bin

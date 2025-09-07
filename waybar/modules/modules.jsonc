@@ -1,0 +1,17 @@
+{
+  "modules-left": [
+    "custom/os_button",
+    "clock",
+    // "cava",
+    "custom/spotify",
+  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": [
+    "group/expand",
+    // "bluetooth",
+    "network",
+    "pulseaudio",
+    "battery",
+    "custom/notification",
+  ],
+}

@@ -14,11 +14,11 @@
     ~/.config/kitty: kitty
 
     # HYPRLAND
-    ~/.config/hypr: hypr
-    ~/.config/assets: assets
-    ~/.config/rofi: rofi
-    ~/.config/swww: swww
-    ~/.config/waybar: waybar
+    # ~/.config/hypr: hypr
+    # ~/.config/assets: assets
+    # ~/.config/rofi: rofi
+    # ~/.config/swww: swww
+    # ~/.config/waybar: waybar
 
 - create:
     - ~/workspace/

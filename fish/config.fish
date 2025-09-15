@@ -1,8 +1,9 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
   set fish_greeting
-  set fish_cursor_default underscore
+  # set fish_cursor_default underscore
   # fastfetch 
+  nvm use lts
   neofetch
   starship init fish --print-full-init | sed 's/"$(commandline)"/(commandline | string collect)/' | source 
 
@@ -12,6 +13,11 @@ if status is-interactive
   # Kitty
   # set -gx PATH $PATH $HOME/.local/kitty.app/bin/
   # alias kdev='kitty --session dev_session.conf'
+
+  alias pamcan pacman
+  alias ls 'eza --icons'
+  alias clear "printf '\033[2J\033[3J\033[1;1H'"
+  alias q 'qs -c ii'
 
   # Walk
   set -gx WALK_EDITOR /usr/local/bin/nvim
@@ -31,9 +37,9 @@ if status is-interactive
   set -gx GOROOT /usr/local/go/
 
   # Java
-  # set -gx JAVA_HOME /usr/lib/jvm/java-17-openjdk-amd64
+  set -gx JAVA_HOME /usr/lib/jvm/java-24-openjdk/
+  set -gx PATH $PATH $JAVA_HOME/bin/
   # set -gx M2_HOME /opt/maven
-  # set -gx PATH $PATH $JAVA_HOME/bin/
   # set -gx PATH $PATH $M2_HOME/bin
 
   # K8s
@@ -66,9 +72,9 @@ if set -q KITTY_INSTALLATION_DIR
 end
 
 # Walk function
-function lk
-  set loc (walk --icons $argv); and cd $loc;
-end
+# function lk
+#   set loc (walk --icons $argv); and cd $loc;
+# end
 
 # PNPM $PATH function
 if not string match -q -- $PNPM_HOME $PATH
@@ -96,3 +102,5 @@ function kdev
     kitten notify --icon kitty "[DEV]" Extreme Go Horse mode activated!
     exit
 end
+
+fish_add_path /home/bedrigue/.spicetify
